@@ -250,3 +250,26 @@ This dependency graph is starting to get large, but it's really not much compare
 Lesson 1 should have explained the basic concepts behind Bazel, and shown why it is such a powerful system for building production software in multiple projects across a single company or organization. The next lesson will build on this basic skeleton to produce mobile clients, servers, and wire traffic they can use to communicate.
 
 Check out [Bazel Lesson 2](https://github.com/sayrer/bazel-lesson-2) for more language integrations and some other advanced Bazel extensions.
+
+
+# Windows notes - set JAVA_HOME
+
+https://github.com/bazelbuild/bazel/issues/6475
+
+    C:\Users\hernad\bazel-lesson-1>set JAVA_HOME=C:\java\openjdk-8u232-b09
+
+    C:\Users\hernad\bazel-lesson-1>..\bazel2 run //java/basic:command
+    WARNING: Running Bazel server needs to be killed, because the startup options are different.
+    Starting local Bazel server and connecting to it...
+    INFO: Analyzed target //java/basic:command (17 packages loaded, 461 targets configured).
+    INFO: Found 1 target...
+    INFO: Deleting stale sandbox base C:/users/hernad/_bazel_hernad/vefzx73d/sandbox
+    Target //java/basic:command up-to-date:
+        bazel-bin/java/basic/command.jar
+        bazel-bin/java/basic/command.exe
+        INFO: Elapsed time: 41.062s, Critical Path: 16.01s
+        INFO: 4 processes: 2 local, 2 worker.
+        INFO: Build completed successfully, 7 total actions
+        INFO: Build completed successfully, 7 total actions
+
+        Hi from Java!
